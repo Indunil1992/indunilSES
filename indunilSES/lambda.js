@@ -13,11 +13,11 @@ exports.handler = function (event, context, callback) {
         Message: {
             Body: {
                 Text: {
-                    Data: 'S L Software Testing Board (SLSTB) has been conducting ISTQB exams in Sri Lanka for many years now, and has issued ~1,600 certificates (as of Jun 2019), in different areas of software testing. Our mission is to establish, nurture and help the testing profession in Sri Lanka, through globally accepted certifications.'
+                    Data: 'Are you planning to sit for one of the ISTQB exams in the near future, but have some questions that you would like to clarify before attempting the exam? SLSTB is initiating a program of interactive forums with prospective exam candidates to address all your clarifications. The first forum will be held on Monday 5th August 2019. This meeting will be held at the OPA Auditorium, Stanley Wijesundara Mawatha, Colombo 00700, from 4:30 PM to 7:00 PM.'
                 }
             },
             Subject: {
-                Data: 'test'
+                Data: 'test1'
             }
         },
         Source: 'indunil@adroitlogic.com'
