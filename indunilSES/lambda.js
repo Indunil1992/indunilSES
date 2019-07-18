@@ -7,7 +7,7 @@ exports.handler = function (event, context, callback) {
         Destination: {
             ToAddresses: ['indunil@adroitlogic.com'],
             CcAddresses: ['indunil@adroitlogic.com'],
-            BccAddresses: []
+            BccAddresses: ['indunil@adroitlogic.com']
         },
         Message: {
             Body: {
