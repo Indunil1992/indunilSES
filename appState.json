@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "indunilSES/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: ['indunil@adroitlogic.com']\n        },\n        Message: {\n            Body: {\n                Html: {\n                    Data: 'uiuiui'\n                }\n            },\n            Subject: {\n                Data: 'subject 2'\n            }\n        },\n        Source: 'indunil@adroitlogic.com'\n    }, function (err, data) {\n        if (err) console.log(err, err.stack);\n        // an error occurred\n        else console.log(data);\n        console.log(\"ssss\");// successful response\n    });\n\n\n    callback(null, { \"message\": \"Successfully API executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n\n    sns.publish({\n        Message: 'c',\n        MessageAttributes: {},\n        MessageStructure: 'String',\n        TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'\n    }).promise()\n        .then(data => {\n            // your code goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n\n    callback(null, { \"message\": \"Successfully API executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -79,14 +79,44 @@
           "selectedIdentity": "indunil@adroitlogic.com",
           "projectRegion": "us-east-1",
           "params": {
-            "to": "indunil@adroitlogic.com",
+            "to": "sachithrarajapakse1992@gmail.com",
             "cc": "",
-            "bcc": "indunil@adroitlogic.com",
+            "bcc": "",
             "subject": "subject 2",
             "body": {
               "html": "uiuiui"
             }
           }
+        }
+      },
+      "ses-janakaud@gmail.com": {
+        "name": "ses-janakaud@gmail.com",
+        "type": "SES",
+        "config": {
+          "selectedIdentity": "janakaud@gmail.com",
+          "projectRegion": "us-east-1",
+          "params": {
+            "to": "indunil@adroitlogic.com",
+            "cc": "",
+            "bcc": "",
+            "subject": "indunil@adroitlogic.com",
+            "body": {
+              "text": "",
+              "html": ""
+            }
+          }
+        }
+      },
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": []
         }
       }
     },
@@ -123,7 +153,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1563436560687
+    "lastSave": 1563437090722
   },
   "VCS_STATE": {
     "provider": "GitHub",

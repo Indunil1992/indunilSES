@@ -1,31 +1,20 @@
 let AWS = require('aws-sdk');
-const ses = new AWS.SES();
+const sns = new AWS.SNS();
 
 exports.handler = function (event, context, callback) {
 
-    ses.sendEmail({
-        Destination: {
-            ToAddresses: ['indunil@adroitlogic.com'],
-            CcAddresses: [],
-            BccAddresses: ['indunil@adroitlogic.com']
-        },
-        Message: {
-            Body: {
-                Html: {
-                    Data: 'uiuiui'
-                }
-            },
-            Subject: {
-                Data: 'subject 2'
-            }
-        },
-        Source: 'indunil@adroitlogic.com'
-    }, function (err, data) {
-        if (err) console.log(err, err.stack);
-        // an error occurred
-        else console.log(data);
-        console.log("ssss");// successful response
-    });
+    sns.publish({
+        Message: 'c',
+        MessageAttributes: {},
+        MessageStructure: 'String',
+        TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'
+    }).promise()
+        .then(data => {
+            // your code goes here
+        })
+        .catch(err => {
+            // error handling goes here
+        });
 
 
     callback(null, { "message": "Successfully API executed" });
