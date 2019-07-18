@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "indunilSES/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: ['sachithrarajapakse1992@gmail.com']\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: ''\n                }\n            },\n            Subject: {\n                Data: 'BCC '\n            }\n        },\n        Source: 'indunil@adroitlogic.com',\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: 'S L Software Testing Board (SLSTB) has been conducting ISTQB exams in Sri Lanka for many years now, and has issued ~1,600 certificates (as of Jun 2019), in different areas of software testing. Our mission is to establish, nurture and help the testing profession in Sri Lanka, through globally accepted certifications.'\n                }\n            },\n            Subject: {\n                Data: 'test'\n            }\n        },\n        Source: 'indunil@adroitlogic.com'\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -81,10 +81,10 @@
           "params": {
             "to": "indunil@adroitlogic.com",
             "cc": "",
-            "bcc": "sachithrarajapakse1992@gmail.com",
-            "subject": "BCC ",
+            "bcc": "",
+            "subject": "test",
             "body": {
-              "text": "",
+              "text": "S L Software Testing Board (SLSTB) has been conducting ISTQB exams in Sri Lanka for many years now, and has issued ~1,600 certificates (as of Jun 2019), in different areas of software testing. Our mission is to establish, nurture and help the testing profession in Sri Lanka, through globally accepted certifications.",
               "html": ""
             }
           }
@@ -124,7 +124,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1563452627519
+    "lastSave": 1563453861248
   },
   "VCS_STATE": {
     "provider": "GitHub",

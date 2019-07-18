@@ -8,19 +8,19 @@ exports.handler = function (event, context, callback) {
         Destination: {
             ToAddresses: ['indunil@adroitlogic.com'],
             CcAddresses: [],
-            BccAddresses: ['sachithrarajapakse1992@gmail.com']
+            BccAddresses: []
         },
         Message: {
             Body: {
                 Text: {
-                    Data: ''
+                    Data: 'S L Software Testing Board (SLSTB) has been conducting ISTQB exams in Sri Lanka for many years now, and has issued ~1,600 certificates (as of Jun 2019), in different areas of software testing. Our mission is to establish, nurture and help the testing profession in Sri Lanka, through globally accepted certifications.'
                 }
             },
             Subject: {
-                Data: 'BCC '
+                Data: 'test'
             }
         },
-        Source: 'indunil@adroitlogic.com',
+        Source: 'indunil@adroitlogic.com'
     }, function (err, data) {
         if (err) console.log(err, err.stack); // an error occurred
         else console.log(data);           // successful response
