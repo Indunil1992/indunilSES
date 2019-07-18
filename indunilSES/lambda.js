@@ -1,13 +1,14 @@
 let AWS = require('aws-sdk');
 const ses = new AWS.SES();
 
+
 exports.handler = function (event, context, callback) {
 
     ses.sendEmail({
         Destination: {
-            ToAddresses: ['sachithrarajapakse1992@gmail.com'],
+            ToAddresses: ['indunil@adroitlogic.com'],
             CcAddresses: [],
-            BccAddresses: []
+            BccAddresses: ['sachithrarajapakse1992@gmail.com']
         },
         Message: {
             Body: {
@@ -16,17 +17,16 @@ exports.handler = function (event, context, callback) {
                 }
             },
             Subject: {
-                Data: 'dsds'
+                Data: 'BCC '
             }
         },
-        Source: 'indunil@adroitlogic.com'
+        Source: 'indunil@adroitlogic.com',
     }, function (err, data) {
-        if (err) console.log(err, err.stack, "not suc"); // an error occurred
-        else console.log(data, "suc");           // successful response
+        if (err) console.log(err, err.stack); // an error occurred
+        else console.log(data);           // successful response
     });
 
 
 
-
-    callback(null, { "message": "Successfully API executed" });
+    callback(null, { "message": "Successfully BCC executed" });
 }

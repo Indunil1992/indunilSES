@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "indunilSES/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['sachithrarajapakse1992@gmail.com'],\n            CcAddresses: [],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: ''\n                }\n            },\n            Subject: {\n                Data: 'dsds'\n            }\n        },\n        Source: 'indunil@adroitlogic.com'\n    }, function (err, data) {\n        if (err) console.log(err, err.stack, \"not suc\"); // an error occurred\n        else console.log(data, \"suc\");           // successful response\n    });\n\n\n\n\n    callback(null, { \"message\": \"Successfully API executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: ['sachithrarajapakse1992@gmail.com']\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: ''\n                }\n            },\n            Subject: {\n                Data: 'BCC '\n            }\n        },\n        Source: 'indunil@adroitlogic.com',\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -79,12 +79,13 @@
           "selectedIdentity": "indunil@adroitlogic.com",
           "projectRegion": "us-east-1",
           "params": {
-            "to": "sachithrarajapakse1992@gmail.com",
+            "to": "indunil@adroitlogic.com",
             "cc": "",
-            "bcc": "",
-            "subject": "dsds",
+            "bcc": "sachithrarajapakse1992@gmail.com",
+            "subject": "BCC ",
             "body": {
-              "text": ""
+              "text": "",
+              "html": ""
             }
           }
         }
@@ -123,7 +124,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1563448151728
+    "lastSave": 1563452627519
   },
   "VCS_STATE": {
     "provider": "GitHub",
