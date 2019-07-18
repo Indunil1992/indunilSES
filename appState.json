@@ -1,0 +1,110 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "560fccd5-74e7-44ba-b14d-a877adc8495a": {
+        "id": "560fccd5-74e7-44ba-b14d-a877adc8495a",
+        "parent": null,
+        "name": "indunilSES",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "ca6c0f72-3420-412e-8ecf-23d3a259db27"
+        ],
+        "isRemovable": false,
+        "filePath": "indunilSES"
+      },
+      "ca6c0f72-3420-412e-8ecf-23d3a259db27": {
+        "id": "ca6c0f72-3420-412e-8ecf-23d3a259db27",
+        "parent": "560fccd5-74e7-44ba-b14d-a877adc8495a",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "indunilSES/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n\n\n\n\n    \n    callback(null, {\"message\": \"Successfully API executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1indunilAPIqainduany",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "20bb4964-9347-4377-aabc-ffc14ef8a0b7": {
+            "id": "20bb4964-9347-4377-aabc-ffc14ef8a0b7",
+            "name": "Unnamed event",
+            "functionId": "ca6c0f72-3420-412e-8ecf-23d3a259db27",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "560fccd5-74e7-44ba-b14d-a877adc8495a",
+    "openFiles": [
+      "ca6c0f72-3420-412e-8ecf-23d3a259db27"
+    ],
+    "currentFileId": "ca6c0f72-3420-412e-8ecf-23d3a259db27",
+    "resources": {
+      "apigusEast1indunilAPIqainduany": {
+        "name": "apigusEast1indunilAPIqainduany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 0,
+          "apiName": "indunilAPI",
+          "endpointType": "REGIONAL",
+          "resourceMode": 0,
+          "resourceName": "qa/indu",
+          "resourcePath": "/qa/indu",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "Test",
+          "mode": 0
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "indunilSES",
+    "projectDescription": "indunilSES",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1563428900286
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "indunilSES",
+      "url": "https://github.com/Indunil1992/indunilSES"
+    }
+  }
+}
