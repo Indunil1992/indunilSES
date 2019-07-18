@@ -11,8 +11,8 @@ exports.handler = function (event, context, callback) {
         },
         Message: {
             Body: {
-                Text: {
-                    Data: ''
+                Html: {
+                    Data: 'uiuiui'
                 }
             },
             Subject: {
