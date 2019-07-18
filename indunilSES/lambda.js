@@ -6,7 +6,7 @@ exports.handler = function (event, context, callback) {
     ses.sendEmail({
         Destination: {
             ToAddresses: ['indunil@adroitlogic.com'],
-            CcAddresses: ['sachithrarajapakse1992@gmail.com'],
+            CcAddresses: ['sachithrarajapakse92@gmail.com'],
             BccAddresses: []
         },
         Message: {
@@ -21,8 +21,8 @@ exports.handler = function (event, context, callback) {
         },
         Source: 'indunil@adroitlogic.com'
     }, function (err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else console.log(data);           // successful response
+        if (err) console.log(err, err.stack,"not suc"); // an error occurred
+        else console.log(data,"suc");           // successful response
     });
 
 
