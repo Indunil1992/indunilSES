@@ -21,8 +21,10 @@ exports.handler = function (event, context, callback) {
         },
         Source: 'indunil@adroitlogic.com',
     }, function (err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else console.log(data);           // successful response
+        if (err) console.log(err, err.stack); 
+        console.log("err hppend"); // an error occurred
+        else console.log(data);   
+        console.log("success");        // successful response
     });
 
 
