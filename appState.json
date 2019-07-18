@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "indunilSES/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: 'Are you planning to sit for one of the ISTQB exams in the near future, but have some questions that you would like to clarify before attempting the exam? SLSTB is initiating a program of interactive forums with prospective exam candidates to address all your clarifications. The first forum will be held on Monday 5th August 2019. This meeting will be held at the OPA Auditorium, Stanley Wijesundara Mawatha, Colombo 00700, from 4:30 PM to 7:00 PM.'\n                }\n            },\n            Subject: {\n                Data: 'test1'\n            }\n        },\n        Source: 'indunil@adroitlogic.com'\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\n\nexports.handler = function (event, context, callback) {\n\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Html: {\n                    Data: 'Are you planning to sit for one of the ISTQB exams in the near future, but have some questions that you would like to clarify before attempting the exam? SLSTB is initiating a program of interactive forums with prospective exam candidates to address all your clarifications. The first forum will be held on Monday 5th August 2019. This meeting will be held at the OPA Auditorium, Stanley Wijesundara Mawatha, Colombo 00700, from 4:30 PM to 7:00 PM.'\n                }\n            },\n            Subject: {\n                Data: 'HTML'\n            }\n        },\n        Source: 'indunil@adroitlogic.com'\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -82,10 +82,9 @@
             "to": "indunil@adroitlogic.com",
             "cc": "",
             "bcc": "",
-            "subject": "test1",
+            "subject": "HTML",
             "body": {
-              "text": "Are you planning to sit for one of the ISTQB exams in the near future, but have some questions that you would like to clarify before attempting the exam? SLSTB is initiating a program of interactive forums with prospective exam candidates to address all your clarifications. The first forum will be held on Monday 5th August 2019. This meeting will be held at the OPA Auditorium, Stanley Wijesundara Mawatha, Colombo 00700, from 4:30 PM to 7:00 PM.",
-              "html": ""
+              "html": "Are you planning to sit for one of the ISTQB exams in the near future, but have some questions that you would like to clarify before attempting the exam? SLSTB is initiating a program of interactive forums with prospective exam candidates to address all your clarifications. The first forum will be held on Monday 5th August 2019. This meeting will be held at the OPA Auditorium, Stanley Wijesundara Mawatha, Colombo 00700, from 4:30 PM to 7:00 PM."
             }
           }
         }
@@ -124,7 +123,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1563454048686
+    "lastSave": 1563454158664
   },
   "VCS_STATE": {
     "provider": "GitHub",

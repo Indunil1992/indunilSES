@@ -12,12 +12,12 @@ exports.handler = function (event, context, callback) {
         },
         Message: {
             Body: {
-                Text: {
+                Html: {
                     Data: 'Are you planning to sit for one of the ISTQB exams in the near future, but have some questions that you would like to clarify before attempting the exam? SLSTB is initiating a program of interactive forums with prospective exam candidates to address all your clarifications. The first forum will be held on Monday 5th August 2019. This meeting will be held at the OPA Auditorium, Stanley Wijesundara Mawatha, Colombo 00700, from 4:30 PM to 7:00 PM.'
                 }
             },
             Subject: {
-                Data: 'test1'
+                Data: 'HTML'
             }
         },
         Source: 'indunil@adroitlogic.com'
