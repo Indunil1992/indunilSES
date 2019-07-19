@@ -4,18 +4,18 @@ const ses = new AWS.SES();
 exports.handler = function (event, context, callback) {
     ses.sendEmail({
         Destination: {
-            ToAddresses: ['indunil@adroitlogic.com'],
-            CcAddresses: ['sachithrarajapakse1992@gmail.com'],
+            ToAddresses: ['sachithrarajapakse1992@gmail.com'],
+            CcAddresses: ['indunil@adroitlogic.com'],
             BccAddresses: []
         },
         Message: {
             Body: {
                 Html: {
-                    Data: '<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big> '
+                    Data: '<a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a><i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big> '
                 }
             },
             Subject: {
-                Data: 'new html'
+                Data: 'new html 1 '
             }
         },
         Source: 'indunil@adroitlogic.com'
