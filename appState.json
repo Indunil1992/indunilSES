@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "indunilSES/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\nexports.handler = function (event, context, callback) {\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: ['sachithrarajapakse1992@gmail.com'],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: '<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big> '\n                }\n            },\n            Subject: {\n                Data: 'sub 11'\n            }\n        },\n        Source: 'indunil@adroitlogic.com',\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\nexports.handler = function (event, context, callback) {\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['indunil@adroitlogic.com'],\n            CcAddresses: ['sachithrarajapakse1992@gmail.com'],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Html: {\n                    Data: '<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big> '\n                }\n            },\n            Subject: {\n                Data: 'new html'\n            }\n        },\n        Source: 'indunil@adroitlogic.com'\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully BCC executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -82,10 +82,10 @@
             "to": "indunil@adroitlogic.com",
             "cc": "sachithrarajapakse1992@gmail.com",
             "bcc": "",
-            "subject": "sub 11",
+            "subject": "new html",
             "body": {
-              "text": "<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big> ",
-              "html": ""
+              "text": "",
+              "html": "<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big> "
             }
           }
         }
@@ -124,7 +124,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1563512611327
+    "lastSave": 1563512794997
   },
   "VCS_STATE": {
     "provider": "GitHub",
