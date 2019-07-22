@@ -11,8 +11,8 @@ exports.handler = function (event, context, callback) {
         },
         Message: {
             Body: {
-                Html: {
-                    Data: '<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big>'
+                Text: {
+                    Data: 'If you have already been approved for a sending limit increase, then you can start sending email to non-verified addresses.'
                 }
             },
             Subject: {
