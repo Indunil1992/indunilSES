@@ -11,12 +11,12 @@ exports.handler = function (event, context, callback) {
         },
         Message: {
             Body: {
-                Text: {
+                Html: {
                     Data: '<i>Italic text.</i> <b>Bold text.</b> <big>Big text.</big>'
                 }
             },
             Subject: {
-                Data: 'cc html'
+                Data: 'cc  correct html'
             }
         },
         Source: 'sachithrarajapakse1992@gmail.com'
