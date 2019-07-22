@@ -1,7 +1,6 @@
 let AWS = require('aws-sdk');
 const ses = new AWS.SES();
 
-
 exports.handler = function (event, context, callback) {
     ses.sendEmail({
         Destination: {
@@ -12,12 +11,11 @@ exports.handler = function (event, context, callback) {
         Message: {
             Body: {
                 Text: {
-                    Data: 'Why do we use it?
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or - less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.  '
-    				}
+                    Data: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.'
+                }
             },
             Subject: {
-                Data: 'sub '
+                Data: 'sub text'
             }
         },
         Source: 'indunil@adroitlogic.com',
@@ -25,8 +23,6 @@ exports.handler = function (event, context, callback) {
         if (err) console.log(err, err.stack); // an error occurred
         else console.log(data);           // successful response
     });
-
-
 
 
     callback(null, { "message": "Successfully BCC executed" });
