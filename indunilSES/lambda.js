@@ -6,7 +6,7 @@ exports.handler = function (event, context, callback) {
     ses.sendEmail({
         Destination: {
             ToAddresses: ['sachithrarajapakse1992@gmail.com'],
-            CcAddresses: ['indunil@adroitlogic.com', 'hirudinee+@adroitlogic.com'],
+            CcAddresses: ['indunil@adroitlogic.com', 'hirudinee+aws@adroitlogic.com'],
             BccAddresses: []
         },
         Message: {
